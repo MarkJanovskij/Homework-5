@@ -6,7 +6,7 @@
   "scripts": {
     "cy:open": "npx cypress open",
     "cy:run": "npx cypress run",
-    "cy:run:first": "npx cypress run --spec `cypress/e2e/visit.cy 1.js`"
+    "cy:run:first": "npx cypress run --spec `cypress/e2e/visit.cy_1.js`"
   },
   "author": "Mark",
   "license": "ISC",
