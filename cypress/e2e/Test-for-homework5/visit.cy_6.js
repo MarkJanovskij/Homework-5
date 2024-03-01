@@ -1,5 +1,4 @@
-describe(`Sixth test suit`, ()=>{
-    it(`Sixth test`, ()=>{
-        cy.visit("https://sqlverifier-live-6e21ca0ed768.herokuapp.com/?page=1&sort=id,asc");
-    })
+it(`Test button version`,()=>{
+    cy.visit("https://sqlverifier-live-6e21ca0ed768.herokuapp.com/?page=1&sort=id,asc");
+    cy.get(`.navbar-version`).click( )
 })

@@ -1,5 +1,4 @@
-describe(`Eighth test suit`, ()=>{
-    it(`Eighth test`, ()=>{
-        cy.visit("https://sqlverifier-live-6e21ca0ed768.herokuapp.com/?page=1&sort=id,asc");
-    })
+it(`Test button 2 page`,()=>{
+    cy.visit("https://sqlverifier-live-6e21ca0ed768.herokuapp.com/?page=1&sort=id,asc");
+    cy.get(`:nth-child(4) > .page-link`).click( )
 })
