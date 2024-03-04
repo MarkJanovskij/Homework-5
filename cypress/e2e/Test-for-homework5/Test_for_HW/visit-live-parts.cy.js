@@ -1,11 +1,67 @@
-describe('Your Test Suite Name', () => {
-    it('Should perform the desired actions', () => {
-      cy.visit('https://sqlverifier-live-6e21ca0ed768.herokuapp.com/?page=1&sort=id,asc');
+describe('Testing Account button', () => {
+    it('Testing Account button', () => {
+      cy.visit('https://sqlverifier-staging-08050d656f7a.herokuapp.com/');
   
-      // Wait for the element to be visible
+      
       cy.get('[data-cy="accountMenu"]').should('be.visible');
   
-      // Click on the element
+      
       cy.get('[data-cy="accountMenu"]').click();
+
+    });
+  });
+
+
+  describe('Test button Language English', () => {
+    it('Test button Language English', () => {
+      cy.visit('https://sqlverifier-staging-08050d656f7a.herokuapp.com/');
+  
+      
+      cy.get(':nth-child(2) > .d-flex > span').should('be.visible').click();
+    });
+  });
+
+  describe('Test button Home', () => {
+    it('Test button Home', () => {
+      cy.visit('https://sqlverifier-staging-08050d656f7a.herokuapp.com/');
+  
+     
+      cy.get('.d-flex > :nth-child(2) > span').should('be.visible').click();
+    });
+  });
+
+  describe('Test button Brand', () => {
+    it('Test button Brand', () => {
+      cy.visit('https://sqlverifier-staging-08050d656f7a.herokuapp.com/');
+  
+      
+      cy.get('.brand-title > span').should('be.visible').click();
+    });
+  });
+
+  describe('Test button Logo', () => {
+    it('Test button Logo', () => {
+      cy.visit('https://sqlverifier-staging-08050d656f7a.herokuapp.com/');
+  
+      
+      cy.get('img').should('be.visible').click();
+    });
+  });
+
+  describe('Test button Version', () => {
+    it('Test button Version', () => {
+      cy.visit('https://sqlverifier-staging-08050d656f7a.herokuapp.com/');
+  
+      
+      cy.get('.navbar-version').should('be.visible').click();
+    });
+  });
+
+  describe('Test button 1 page', () => {
+    it('Test button 1 page', () => {
+      cy.visit('https://sqlverifier-staging-08050d656f7a.herokuapp.com/');
+  
+      
+      cy.get('.active > .page-link').should('be.visible').click();
     });
   });
