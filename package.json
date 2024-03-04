@@ -6,7 +6,9 @@
   "scripts": {
     "cy:open": "npx cypress open",
     "cy:run": "npx cypress run",
-    "cy:run:first": "npm run cy:run --spec 'cypress/e2e/Test-for-homework5/visit.cy_1.js'"
+    "cy:run:first": "npm run cy:run --spec 'cypress/e2e/Test-for-homework5/Test_for_HW/visit-live.cy.js'",
+    "cy:run:chrome": "npx cypress run --browser chrome --spec 'cypress/e2e/Test-for-homework5/Test_for_HW/visit-live.cy.js' --headed",
+    "cy:run:electro": "npx cypress run --browser electron --spec 'cypress/e2e/Test-for-homework5/Test_for_HW/visit-live.cy.js' --headed"
   },
   "author": "Mark",
   "license": "ISC",
