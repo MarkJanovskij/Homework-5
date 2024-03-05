@@ -29,3 +29,24 @@ describe("Example Test Suite", () => {
     });
   });
   
+  // cypress/support/index.js
+
+// Run this code before any tests in the suite
+before(() => {
+    // Add any setup code you need to run once before all tests
+    // For example, you might want to set up test data or perform global configurations
+  });
+  
+  // Run this code before each test in the suite
+  beforeEach(() => {
+    // Add any setup code you need to run before each test
+    // For example, you might want to log in before each test
+  });
+  
+  // Define custom commands or other configurations as needed
+  Cypress.Commands.add("login", () => {
+    // Implement login steps here
+  });
+  
+  // Add more custom commands as needed
+  
