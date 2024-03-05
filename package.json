@@ -6,10 +6,11 @@
   "scripts": {
     "cy:open": "npx cypress open",
     "cy:run": "npx cypress run",
-    "cy:run:first": "npm run cy:run --spec 'cypress/e2e/Test-for-homework5/Test_for_HW/visit-live.cy.js'",
-    "cy:run:chrome": "npx cypress run --browser chrome --spec 'cypress/e2e/Test-for-homework5/Test_for_HW/visit-live.cy.js' --headed",
-    "cy:run:electro": "npx cypress run --browser electron --spec 'cypress/e2e/Test-for-homework5/Test_for_HW/visit-live.cy.js' --headed",
-    "cy:run:parallel": "npx cypress run --record --key 272d89f6-410f-4189-a8ce-c9b3d129d54b --parallel --browser chrome --ci-build-id mark1"
+    "cy:run:chrome": "npx cypress run --browser chrome --spec 'cypress/e2e/Test-for-homework5/Test_for_HW/visit-live.cy.js'",
+    "cy:run:electron": "npx cypress run --browser electron --spec 'cypress/e2e/Test-for-homework5/Test_for_HW/visit-live.cy.js'",
+    "cy:run:both": "npm run cy:run:chrome && npm run cy:run:electron",
+    "cy:run:dashboard": "npx cypress run --record --key 272d89f6-410f-4189-a8ce-c9b3d129d54b --browser chrome --spec 'cypress/e2e/Test-for-homework5/Test_for_HW/visit-live.cy.js' && npx cypress run --record --key 272d89f6-410f-4189-a8ce-c9b3d129d54b --browser electron --spec 'cypress/e2e/Test-for-homework5/Test_for_HW/visit-live.cy.js'",
+    "cy:run:parallel": "npx cypress run --record --key 272d89f6-410f-4189-a8ce-c9b3d129d54b --parallel --browser chrome --ci-build-id mark1 && npx cypress run --record --key 272d89f6-410f-4189-a8ce-c9b3d129d54b --parallel --browser electron --ci-build-id mark1"
   },
   "author": "Mark",
   "license": "ISC",
@@ -17,3 +18,4 @@
     "cypress": "^13.6.4"
   }
 }
+
