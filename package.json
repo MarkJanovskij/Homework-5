@@ -8,7 +8,8 @@
     "cy:run": "npx cypress run",
     "cy:run:first": "npm run cy:run --spec 'cypress/e2e/Test-for-homework5/Test_for_HW/visit-live.cy.js'",
     "cy:run:chrome": "npx cypress run --browser chrome --spec 'cypress/e2e/Test-for-homework5/Test_for_HW/visit-live.cy.js' --headed",
-    "cy:run:electro": "npx cypress run --browser electron --spec 'cypress/e2e/Test-for-homework5/Test_for_HW/visit-live.cy.js' --headed"
+    "cy:run:electro": "npx cypress run --browser electron --spec 'cypress/e2e/Test-for-homework5/Test_for_HW/visit-live.cy.js' --headed",
+    "cy:run:parallel": "npx cypress run --record --key 272d89f6-410f-4189-a8ce-c9b3d129d54b --parallel --browser chrome --ci-build-id mark1"
   },
   "author": "Mark",
   "license": "ISC",
