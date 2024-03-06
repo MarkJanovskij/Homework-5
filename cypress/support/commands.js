@@ -20,7 +20,21 @@ Cypress.Commands.add('validLogin', (username, password) => {
     cy.url().should('include', '/logout');
     cy.get('div.p-5').should('include.text', 'Logged out successfully!');
   });
+  // Add hooks to run before each test
+beforeEach(() => {
+    // Add any setup code you need to run before each test
+    // For example, you might want to log in before each test
+    const user = Cypress.env('environment1').user;
+    cy.visit(Cypress.env('environment1').baseUrl);
+    cy.validLogin(user.username, user.password);
+  });
   
+  // Add hooks to run after each test
+  afterEach(() => {
+    // Add any cleanup code you need to run after each test
+    // For example, you might want to log out after each test
+    cy.logout();
+  });
   // cypress/integration/example.spec.js
   
   describe("Correct loading verifier page", () => {
