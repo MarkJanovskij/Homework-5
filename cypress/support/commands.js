@@ -1,17 +1,17 @@
-// cypress/support/commands.js
+ // cypress/support/commands.js
 
-Cypress.Commands.add('validLogin', (username, password) => {
+ Cypress.Commands.add('validLogin', (username, password) => {
     cy.get('#account-menu').click();
-    cy.log('Before waiting for login button');
-    cy.wait(2000); // Adjust the wait time as needed
-    cy.log('After waiting for login button');
-    cy.get('#login-item').click();
+    cy.log('Before waiting for loging button');
+    cy.wait(2000);
+    cy.log('After waiting for loging button')
     cy.get('#login-item').click();
     cy.get('input[name="username"]').type(username);
     cy.get('input[name="password"]').type(password);
     cy.get('button[type="submit"]').click();
-   
+    cy.get('#entity-menu').should('be.visible');
   });
+  
   
   Cypress.Commands.add('switchLanguage', (language) => {
     cy.get('#header-tabs > li:nth-child(4) > a').click();
@@ -19,13 +19,16 @@ Cypress.Commands.add('validLogin', (username, password) => {
   });
   
   Cypress.Commands.add('logout', () => {
+    // Log in first
+    const user = Cypress.env('environment1').user;
+    cy.validLogin(user.username, user.password);
+  
+    // Then perform logout
     cy.get('#account-menu').click();
     cy.get('[data-cy="logout"]').click();
-    cy.url().should('include', '/logout'); // Corrected the typo here
+    cy.url().should('include', '/logout');
     cy.get('div.p-5').should('include.text', 'Logged out successfully!');
-});
-  
-  
+  });
   // Add hooks to run before each test
 beforeEach(() => {
     // Add any setup code you need to run before each test
@@ -63,4 +66,3 @@ beforeEach(() => {
       cy.logout();
     });
   });
-  
