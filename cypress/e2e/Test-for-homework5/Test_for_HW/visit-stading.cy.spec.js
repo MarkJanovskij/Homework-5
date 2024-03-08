@@ -1,8 +1,5 @@
-import {dd} from "";
-import {loginPage} from "pages/loginPage.js";
-const loginPageElements = require ("cypress/fixtures/pages/loginPageSelectors.json")
-
-
+// const { loginPage } = require("./pages/loginPage.js");
+// const loginPageElements = require ("cypress/fixtures/pages/loginPageSelectors.json");
 
 
 

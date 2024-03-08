@@ -1,5 +1,5 @@
 {
-    "loginWindow": ".modal-content",
+  
     "loginField": "[data-cy=\"username\"]",
     "passwordField": "[data-cy=\"password\"]",
     "loginButton": "[data-cy=\"submit\"] > span"
