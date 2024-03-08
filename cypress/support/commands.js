@@ -24,3 +24,12 @@ Cypress.Commands.add('validLogin', (username, password) => {
     cy.url().should('include', '/logout');
     cy.get('div.p-5').should('include.text', 'Logged out successfully!');
   });
+
+  Cypress.Commands.add('logout', () => {
+    const user = Cypress.env('environment2').user;
+    cy.validLogin(user.username, user.password);
+    cy.get('#account-menu').click();
+    cy.get('[data-cy="logout"]').click();
+    cy.url().should('include', '/logout');
+    cy.get('div.p-5').should('include.text', 'Logged out successfully!');
+  });

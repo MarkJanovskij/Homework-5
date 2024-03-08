@@ -5,13 +5,48 @@
 
 describe('test', () => {
   beforeEach(() => {
-    cy.visit('/')
+    cy.visit('/');
+  });
+  it('should login using environment2 URL', () => {
+    cy.visit(Cypress.env('environment2').baseUrl);
+    const username = Cypress.env('environment2').user.username;
+    const password = Cypress.env('environment2').user.password;
+    cy.validLogin(username, password);
+  });
+});
+
+describe("Correct loading verifier page", () => {
+  it('should login using environment2 URL', () => {
+    cy.visit(Cypress.env('environment2').baseUrl);
+    cy.validLogin(
+      Cypress.env('environment2').user.username, 
+      Cypress.env('environment2').user.password);
+    cy.switchLanguage('English', 'Home');
+    cy.switchLanguage('Français', 'Accueil');
+
+    cy.logout();
   })
+});
 
   it('test login', () => { // пример использования команд
     cy.validLogin() // теперь тут выполняется вся та логика, которая описана внутри команды 
   })
-})
+
+
+
+describe("Correct loading verifier page", () => {
+  it('should login using environment2 URL', () => {
+    cy.visit(Cypress.env('environment2').baseUrl);
+    cy.validLogin(
+      Cypress.env('environment2').user.username, 
+      Cypress.env('environment2').user.password);
+    cy.switchLanguage('English', 'Home');
+    cy.switchLanguage('Français', 'Accueil');
+
+    cy.logout();
+  })
+});
+
 
 describe('11 Test', () => {
   beforeEach(() => {
