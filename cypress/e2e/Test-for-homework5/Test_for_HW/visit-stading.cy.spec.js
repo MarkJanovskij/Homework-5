@@ -1,7 +1,17 @@
 // const { loginPage } = require("./pages/loginPage.js");
 // const loginPageElements = require ("cypress/fixtures/pages/loginPageSelectors.json");
 
+// file with tests
 
+describe('test', () => {
+  beforeEach(() => {
+    cy.visit('/')
+  })
+
+  it('test login', () => { // пример использования команд
+    cy.validLogin() // теперь тут выполняется вся та логика, которая описана внутри команды 
+  })
+})
 
 describe('11 Test', () => {
   beforeEach(() => {

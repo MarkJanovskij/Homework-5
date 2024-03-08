@@ -1,3 +1,17 @@
+describe('test', () => {
+  beforeEach(() => {
+    cy.visit('/')
+  })
+
+  it('test login', () => { // пример использования команд
+    cy.validLogin() // теперь тут выполняется вся та логика, которая описана внутри команды 
+  })
+})
+
+
+
+
+
 describe('Testing Account button', () => {
     it('Testing Account button', () => {
       cy.visit('https://sqlverifier-live-6e21ca0ed768.herokuapp.com/?page=1&sort=id,asc');
