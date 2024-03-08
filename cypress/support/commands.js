@@ -1,3 +1,5 @@
+import './commands'
+
 Cypress.Commands.add('validLogin', (username, password) => {
     cy.get('#account-menu').click();
     cy.log('Before waiting for loging button');
