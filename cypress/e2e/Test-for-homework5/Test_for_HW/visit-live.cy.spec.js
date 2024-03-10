@@ -4,8 +4,8 @@ describe('test', () => {
   });
 
   it('test login with hardcoded credentials', () => {
-    const username = 'kot'; // Replace 'your_username' with your actual username
-    const password = '654321'; // Replace 'your_password' with your actual password
+    const username = Cypress.env('environment1').user.username;
+    const password = Cypress.env('environment1').user.password;
     cy.validLogin(username, password);
 });
 

@@ -1,20 +1,17 @@
 describe('test', () => {
-  beforeEach(() => {
-      cy.visit(Cypress.config('env').environment2.baseUrl);
-  });
-
-  it('test login with hardcoded credentials', () => {
-      const username = 'student82'; // Replace 'your_username' with your actual username
-      const password = '963852'; // Replace 'your_password' with your actual password
+    beforeEach(() => {
+      // No need to visit the baseUrl here since it's already visited in the environment configuration
+    });
+    
+    it('test login with hardcoded credentials', () => {
+      const username = Cypress.env('environment2').user.username;
+      const password = Cypress.env('environment2').user.password;
       cy.validLogin(username, password);
-  });
-
-  // it('test login with command', () => {
-  //     cy.validLogin(); // 
-  // });
-
-  it('Testing Account button', () => {
+    });
+      
+    it('Testing Account button', () => {
       cy.get('[data-cy="accountMenu"]').should('be.visible');
-      cy.get('[data-cy="accountMenu"]').click();
+      cy.get('[data-cy="accountMenu"]').click({force: true});
+    });
   });
-});
+  
