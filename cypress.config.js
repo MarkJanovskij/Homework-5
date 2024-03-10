@@ -25,5 +25,5 @@ module.exports = defineConfig({
       },
     },
   },
-  defaultCommandTimeout: 10000 // Adjust the timeout as needed
+  //defaultCommandTimeout: 10000 // Adjust the timeout as needed
 });
