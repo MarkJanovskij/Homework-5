@@ -1,20 +1,21 @@
 class LoginPage {
-    elements = {
-       // loginWindow: () => cy.get('.modal-content'),
-        loginField: () => cy.get('[data-cy="username"]'),
-        passwordField: () => cy.get('[data-cy="password"]'),
-        loginButton: () => cy.get('[data-cy="submit"] > span'),
-    };
+    constructor() {
+        this.loginField = () => cy.get('[data-cy="username"]');
+        this.passwordField = () => cy.get('[data-cy="password"]');
+        this.loginButton = () => cy.get('[data-cy="submit"] > span');
+    }
 
     inputLogin(login) {
-        this.elements.loginField().type(login);
+        this.loginField().clear().type(login); // Clear existing content before typing
     }
 
     inputPassword(password) {
-        this.elements.passwordField().type(password);
+        this.passwordField().clear().type(password); // Clear existing content before typing
     }
 
     clickLogin() {
-        this.elements.loginButton().click();
+        this.loginButton().click();
     }
 }
+
+export default LoginPage;

@@ -3,19 +3,19 @@
 //     const username = Cypress.env('environment2').user.username; // Retrieve username from environment
 //     const password = Cypress.env('environment2').user.password; // Retrieve password from environment
 //     cy.validLogin(username, password);
-// });
+// });v
 
 // it('Testing Account button', () => {
 //   cy.get('[data-cy="accountMenu"]').should('be.visible');
 //   cy.get('[data-cy="accountMenu"]').click();
-// });
+// });v
 
 //   it('should login using environment2 URL', () => {
 //     cy.visit(Cypress.env('environment2').baseUrl);
 //     const username = Cypress.env('environment2').user.username;
 //     const password = Cypress.env('environment2').user.password;
 //     cy.validLogin(username, password);
-//   });
+//   });v
 // });
 
 // describe("Correct loading verifier page", () => {

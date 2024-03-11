@@ -1,6 +1,6 @@
 {
+    "loginField": "[data-cy='username']",
+    "passwordField": "[data-cy='password']",
+    "loginButton": "[data-cy='submit'] > span"
+  }
   
-    "loginField": "[data-cy=\"username\"]",
-    "passwordField": "[data-cy=\"password\"]",
-    "loginButton": "[data-cy=\"submit\"] > span"
-}
