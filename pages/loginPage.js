@@ -1,20 +1,23 @@
-class LoginPage {
-    constructor() {
-        this.loginField = () => cy.get('[data-cy="username"]');
-        this.passwordField = () => cy.get('[data-cy="password"]');
-        this.loginButton = () => cy.get('[data-cy="submit"] > span');
+export class LoginPage {
+    elements = {
+        loginField : () => cy.get('[data-cy="username"]'),
+        passwordField : () => cy.get('[data-cy="password"]'),
+        loginButton : () => cy.get('[data-cy="submit"] > span')
     }
 
-    inputLogin(login) {
-        this.loginField().clear().type(login); // Clear existing content before typing
+    inputLogin(login,password) {
+        this.elements.loginField().clear().type(login); // Clear existing content before typing
+        this.elements.passwordField().clear().type(password);
+        this.elements.loginButton().click();
+
     }
 
     inputPassword(password) {
-        this.passwordField().clear().type(password); // Clear existing content before typing
+         // Clear existing content before typing
     }
 
     clickLogin() {
-        this.loginButton().click();
+        
     }
 }
 

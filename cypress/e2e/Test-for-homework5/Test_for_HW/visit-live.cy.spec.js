@@ -1,3 +1,11 @@
+
+import {LoginPage} from "C:\Users\myano\Desktop\hw5\pages\loginPage.js";
+
+const loginPageElements = require("C:\Users\myano\Desktop\hw5\cypress\fixtures\pages\loginPageSelectors.json")
+describe ("LogingPage", ()=>{
+  let loginPage = new LoginPage();
+})
+
 describe('test', () => {
   beforeEach(() => {
       cy.visit('/');
