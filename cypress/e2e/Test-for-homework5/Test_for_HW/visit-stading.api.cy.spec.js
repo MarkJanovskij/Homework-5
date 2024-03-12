@@ -1,6 +1,6 @@
 //import { LoginPage } from "../../../pages/loginPage.js";
 
-const LoginPage = require('../../../../pages/loeginPag.js');
+const LoginPage = require('../../../../pages/loginPage.js');
 
 
 describe("LoginPage", () => {
