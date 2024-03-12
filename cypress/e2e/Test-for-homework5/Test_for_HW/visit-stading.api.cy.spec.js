@@ -1,30 +1,74 @@
 //import { LoginPage } from "../../../pages/loginPage.js";
-
 const LoginPage = require('../../../../pages/loginPage.js');
-
 
 describe("LoginPage", () => {
   let loginPage = new LoginPage();
 
   describe("API", () => {
     beforeEach(() => {
-      // No need to visit the baseUrl here since it's already visited in the environment configuration
       cy.visit(Cypress.env("environment2").baseUrl);
     });
 
-    it("user - API", () => {
-      cy.request({
-        method: "PUT",
-        headers: {
-          Cookie:
-            "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbl9hdXRvbWF0aW9uIiwiZXhwIjoxNzEyNzQzNjk4LCJhdXRoIjoiUk9MRV9BRE1JTiIsImlhdCI6MTcxMDE1MTY5OH0.jAM5Pbh4hEtDYUQcPbSkCJe93TxuOpbqjt_V50U3puCmRzVDWrfHk_Vs4k94o8ElaVFvBAleMBig-jFqcSE0mw",
-        },
-        url: "https://sqlverifier-staging-08050d656f7a.herokuapp.com/login",
-        body: { password: { password: "admin_automation" } },
-      }).then((response) => {
-        expect(response.status).to.equal(200);
+    let token = "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbl9hdXRvbWF0aW9uIiwiZXhwIjoxNzEwMzMyNTIxLCJhdXRoIjoiUk9MRV9BRE1JTiIsImlhdCI6MTcxMDI0NjEyMX0.LRE7LII95-Zy4qHzlolahIgh6iRwsnDDe7FqrI29jTbHVErh9JHcAto-LYBBpay4-Hz00x3jH5b66wHWzDL8SA";
+
+    it("API_login_admin", () => {
+        cy.request({
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          url: Cypress.config("https://sqlverifier-staging-08050d656f7a.herokuapp.com/") + "/api/authenticate",
+          body: {
+            username: "admin_automation",
+            password: "admin_automation",
+          },
+        }).then((response) => {
+          expect(response.status).to.equal(200);
+          token = response.body.id_token;
+        });
       });
-      loginPage.login("admin_automation","admin_automation")
     });
   });
-});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//     it("user - API", () => {
+//       let token = "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbl9hdXRvbWF0aW9uIiwiZXhwIjoxNzEwMzMyNTIxLCJhdXRoIjoiUk9MRV9BRE1JTiIsImlhdCI6MTcxMDI0NjEyMX0.LRE7LII95-Zy4qHzlolahIgh6iRwsnDDe7FqrI29jTbHVErh9JHcAto-LYBBpay4-Hz00x3jH5b66wHWzDL8SA";
+
+//       cy.request({
+//         method: "POST",
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//         url: "https://sqlverifier-staging-08050d656f7a.herokuapp.com/login", 
+//         body: { 
+//           username: "admin_automation",
+//           password: "admin_automation",
+//         },
+//       }).then((response) => {
+//         expect(response.status).to.equal(200);
+//         token = response.body.id_token;
+
+       
+//         cy.wrap(token).as("token"); 
+//       });
+
+      
+//     });
+//   });
+// });
