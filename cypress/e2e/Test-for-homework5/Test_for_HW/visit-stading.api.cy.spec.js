@@ -1,6 +1,6 @@
-import { LoginPage } from "C:\Users\myano\Desktop\hw5\pages\loginPage.js";
+//import { LoginPage } from "../../../pages/loginPage.js";
 
-const loginPageElements = require(` ../../fixtures/pages/loginPageSelectors.json`);
+const LoginPage = require('../../../../pages/loeginPag.js');
 
 
 describe("LoginPage", () => {

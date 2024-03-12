@@ -1,4 +1,4 @@
-export class LoginPage {
+class LoginPage {
     elements = {
         loginField : () => cy.get('[data-cy="username"]'),
         passwordField : () => cy.get('[data-cy="password"]'),
@@ -21,4 +21,4 @@ export class LoginPage {
     }
 }
 
-export default LoginPage;
+module.exports = LoginPage;
