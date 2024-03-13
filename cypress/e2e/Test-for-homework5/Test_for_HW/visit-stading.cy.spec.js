@@ -1,31 +1,29 @@
-describe('test', () => {
-    beforeEach(() => {
-      // No need to visit the baseUrl here since it's already visited in the environment configuration
-      cy.visit(Cypress.env('environment2').baseUrl);
-    });
-    
-    it('test login with hardcoded credentials', () => {
-        const username = 'admin_automation'; // Replace 'your_username' with your actual username
-        const password = 'admin_automation'; // Replace 'your_password' with your actual password
-        cy.validLogin(username, password);
-    });
-      
-    it('Testing Account button', () => {
-      cy.get('[data-cy="accountMenu"]').should('be.visible');
-      cy.get('[data-cy="accountMenu"]').click({force: true});
-    });
+describe('tests for visit staging', () => {
+  beforeEach(() => {
+    cy.visit(Cypress.env('environment2').baseUrl);
+  });
 
-    
-    it('Correct loading verifier page', () => {
-        cy.visit(Cypress.env('environment2').baseUrl);
-        const username = Cypress.env('environment2').user.username;
-        const password = Cypress.env('environment2').user.password;
-        cy.validLogin(username, password);
-      }); 
-    
+  it('test login with hardcoded credentials', () => {
+    const username = 'admin_automation'; 
+    const password = 'admin_automation'; 
+    cy.validLogin(username, password);
+  });
+
+  it('Testing Account button', () => {
+    cy.get('[data-cy="accountMenu"]').should('be.visible');
+    cy.get('[data-cy="accountMenu"]').click({ force: true });
+  });
 
 
-      it('Test button Language English', () => {
+  it('Correct loading verifier page', () => {
+    cy.visit(Cypress.env('environment2').baseUrl);
+    const username = Cypress.env('environment2').user.username;
+    const password = Cypress.env('environment2').user.password;
+    cy.validLogin(username, password);
+  });
+
+
+  it('Test button Language English', () => {
     cy.get(':nth-child(2) > .d-flex > span').should('be.visible').click();
   });
 
@@ -64,5 +62,4 @@ describe('test', () => {
   it('Test button last page', () => {
     cy.get(':nth-child(9) > .page-link').should('be.visible').click();
   });
-  });
-  
+});
