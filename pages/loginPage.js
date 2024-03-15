@@ -1,8 +1,12 @@
+const selectors = require('../cypress/fixtures/pages/loginPageSelectors.json');
+
 class LoginPage {
-    elements = {
-        loginField: () => cy.get('[data-cy="username"]'),
-        passwordField: () => cy.get('[data-cy="password"]'),
-        loginButton: () => cy.get('[data-cy="submit"] > span')
+    constructor() {
+        this.elements = {
+            loginField: () => cy.get(selectors.loginField),
+            passwordField: () => cy.get(selectors.passwordField),
+            loginButton: () => cy.get(selectors.loginButton)
+        };
     }
 
     inputLogin(login) {
@@ -19,4 +23,3 @@ class LoginPage {
 }
 
 module.exports = LoginPage;
-

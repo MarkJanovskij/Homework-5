@@ -1,7 +1,22 @@
+const LoginPage = require(`../../../../pages/loginPage.js`)
+
+
 describe('tests for visit live', () => {
   beforeEach(() => {
     cy.visit('/') + "?page=1&sort=id,asc";
   });
+
+  it("test with loginPage class", () => {
+    const loginPage = new LoginPage()
+    cy.visit("https://sqlverifier-live-6e21ca0ed768.herokuapp.com/login");
+    const loginInput = loginPage.elements.loginField() // получили логин инпут
+    loginInput.type("admin_automation") // вводим логин
+    const passwordInput = loginPage.elements.passwordField() // получили пассворд инпут 
+    passwordInput.type("admin_automation") // вводим пароль
+    const submitButton = loginPage.elements.loginButton() // получили кнопку сабмит
+    submitButton.click() // нажали кнопку отправить
+  })
+
 
   it('test login with hardcoded credentials', () => {
     const username = 'kot';
